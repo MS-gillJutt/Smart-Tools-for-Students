@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Smart Student Tools</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/script.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo text-gradient">Smart Student Tools</div>
+    <div class="menu-toggle" id="mobile-menu-btn">☰</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/tools.html">All Tools</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/contact.html" style="color: white;">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="layout-wrapper">
+    <div class="layout-left">
+      <div class="left-content">
+        <!-- Hero Section -->
+        <section class="hero">
+          <h1>Get in <span class="text-gradient">Touch</span></h1>
+          <p>Have a feature request, spotted a bug, or need help? Send a message and we'll get back to you.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+          <div class="footer-content" style="text-align: left; padding: 1rem 0;">
+            <p style="margin-bottom: 0.5rem; display: block; font-size: 0.85rem;">Built for students with <span class="heart">❤️</span></p>
+            <p class="text-muted" style="margin-bottom: 0.25rem; display: block; font-size: 0.75rem;">Developed by <strong style="color: #a5b4fc;">Muhammad Shahid</strong></p>
+            <p class="text-muted" style="display: block; font-size: 0.75rem;">&copy; 2024 Smart Student Tools. All rights reserved.</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <div class="layout-right">
+      <div class="bento-main-grid">
+        <!-- Contact Form -->
+        <div class="card card-contact" style="padding: 2.5rem;">
+          <h3 class="section-title" style="font-size: 1.5rem; margin-bottom: 1.5rem;">Send a Message</h3>
+          <div class="contact-container">
+            <form id="contact-form">
+              <div class="form-row" style="flex-direction: column;">
+                <input type="text" class="form-control" style="padding: 1rem; border-radius: 0.75rem; margin-bottom: 1rem;" placeholder="Your Name" required>
+                <input type="email" class="form-control" style="padding: 1rem; border-radius: 0.75rem; margin-bottom: 1rem;" placeholder="Your Email" required>
+              </div>
+              <div class="form-row" style="flex-direction: column;">
+                <textarea class="form-control" style="padding: 1rem; border-radius: 0.75rem; min-height: 150px; margin-bottom: 1.5rem; resize: vertical;" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary contact-btn" style="width: 100%; padding: 1rem; font-size: 1rem;">Send Message</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

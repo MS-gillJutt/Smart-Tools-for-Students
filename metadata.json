@@ -1,0 +1,6 @@
+{
+  "name": "Smart Student Tools",
+  "description": "A platform that provides AI-powered tools for students like PDF summarization and image text extraction.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
