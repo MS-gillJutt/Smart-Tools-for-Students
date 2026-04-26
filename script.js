@@ -59,3 +59,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// PWA Installation & Service Worker (Disabled to fix dev server caching)
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function(registrations) {
+    for(let registration of registrations) {
+      registration.unregister();
+    }
+  });
+}
+
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  const installBtns = document.querySelectorAll('.install-btn');
+  installBtns.forEach(btn => btn.style.display = 'block');
+});
+
+document.addEventListener('click', async (e) => {
+  if (e.target.classList.contains('install-btn')) {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      if (outcome === 'accepted') {
+        deferredPrompt = null;
+        document.querySelectorAll('.install-btn').forEach(btn => btn.style.display = 'none');
+      }
+    }
+  }
+});
