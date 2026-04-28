@@ -84,6 +84,7 @@ h1, h2, h3 {
   z-index: 1000;
   max-width: 1400px;
   margin: 0 auto;
+  gap: 3rem; /* Added gap between logo and links */
 }
 
 .nav-logo {
@@ -112,7 +113,7 @@ h1, h2, h3 {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem; /* Increased spacing between links */
   font-size: 0.875rem;
   font-weight: 500;
   margin: 0;
@@ -136,7 +137,12 @@ h1, h2, h3 {
 
 .nav-links a {
   color: var(--text-muted);
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: #a5b4fc;
 }
 
 .nav-links a:hover {
@@ -437,12 +443,26 @@ footer.main-footer {
   color: #c7d2fe;
 }
 
-/* Contact Settings */
+/* Card Layout Fixes for About/Contact pages */
+.layout-right .card-featured,
+.layout-right .card-contact {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .card-contact {
   background: rgba(79, 70, 229, 0.1);
   border: 1px solid rgba(99, 102, 241, 0.3);
   border-radius: 1rem;
   padding: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .layout-right .card-featured,
+  .layout-right .card-contact {
+    margin: 0;
+  }
 }
 
 .section-title {
@@ -506,8 +526,20 @@ footer.main-footer {
 
   .nav-links.active {
     display: flex;
-    align-items: flex-start;
-    gap: 1.25rem;
+    align-items: center; /* Center links on mobile */
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 0.5rem 0;
+    font-size: 1.125rem; /* Larger font for mobile */
+    color: #ffffff; /* Brighter white for mobile readability */
   }
 
   .menu-toggle {

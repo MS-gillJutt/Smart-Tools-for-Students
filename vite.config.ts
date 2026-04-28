@@ -10,6 +10,16 @@ export default defineConfig(({mode}) => {
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
+    build: {
+      rollupOptions: {
+        input: {
+          main: path.resolve(__dirname, 'index.html'),
+          tools: path.resolve(__dirname, 'tools.html'),
+          about: path.resolve(__dirname, 'about.html'),
+          contact: path.resolve(__dirname, 'contact.html'),
+        },
+      },
+    },
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
